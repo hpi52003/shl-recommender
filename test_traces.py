@@ -1,16 +1,3 @@
-"""
-test_traces.py
-
-Runs the agent against the 10 sample conversation traces and
-checks that our responses are reasonable.
-
-This isn't a full automated eval — it's a sanity check to run
-locally before deploying. You can see what the agent says and
-catch obvious failures like wrong URLs or hallucinations.
-
-Run with:  python test_traces.py
-"""
-
 import json
 import time
 
