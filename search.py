@@ -13,10 +13,6 @@ _built = False
 
 
 def _build_index():
-    """
-    Load the embedding model and build the FAISS index.
-    Called once at startup. Takes ~5-10 seconds.
-    """
     global _model, _index, _built
 
     catalog = get_catalog()
@@ -45,12 +41,6 @@ def ensure_index():
 
 
 def retrieve(query: str, top_k: int = 20) -> list[dict]:
-    """
-    Given a natural language query, return up to top_k catalog items
-    ranked by semantic similarity.
-
-    Returns a list of catalog item dicts (same structure as catalog.items).
-    """
     if not _built:
         _build_index()
 
@@ -109,8 +99,6 @@ def retrieve_filtered(
         if len(filtered) >= top_k:
             break
 
-    # if filtering gave us nothing, fall back to unfiltered
-    # better to return something than nothing
     if not filtered:
         filtered = candidates[:top_k]
 
