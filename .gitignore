@@ -1,0 +1,15 @@
+# never commit secrets
+.env
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+
+# local virtual env if you create one
+venv/
+.venv/
+
+# editor stuff
+.vscode/
+.idea/
