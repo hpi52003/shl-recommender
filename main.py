@@ -5,11 +5,6 @@ FastAPI app. Two endpoints:
   GET  /health  -> {"status": "ok"}
   POST /chat    -> agent response
 
-The app is stateless — every /chat call carries the full
-conversation history. We store nothing between requests.
-
-On startup we warm up the FAISS index so the first real
-request isn't slow.
 """
 
 from contextlib import asynccontextmanager
