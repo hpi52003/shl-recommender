@@ -21,8 +21,7 @@ from groq import Groq # type: ignore
 from catalog import get_catalog
 from search import retrieve
 
-# ── Groq setup ────────────────────────────────────────────────────────────────
-
+# Groq setup 
 _client = None
 
 
@@ -38,7 +37,7 @@ def _get_client() -> Groq:
     return _client
 
 
-# ── System prompt ─────────────────────────────────────────────────────────────
+# System prompt 
 
 SYSTEM_PROMPT = """You are an SHL assessment recommender. Your only job is to help hiring managers and recruiters find the right SHL assessments for their roles.
 
@@ -96,7 +95,6 @@ Now respond to the last user message. Output ONLY the JSON object. Start with {{
 """
 
 
-# ── Helpers ───────────────────────────────────────────────────────────────────
 
 def _build_search_query(messages: list[dict]) -> str:
     """
@@ -219,9 +217,6 @@ def _validate_and_clean(parsed: dict, catalog_urls: set[str]) -> dict:
         "recommendations": clean_recs,
         "end_of_conversation": bool(eoc),
     }
-
-
-# ── Main entry point ──────────────────────────────────────────────────────────
 
 def chat(messages: list[dict]) -> dict:
     """
