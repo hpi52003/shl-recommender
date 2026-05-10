@@ -1,13 +1,3 @@
-"""
-catalog.py
-
-Loads the SHL product catalog from the JSON file and builds
-lookup structures we need throughout the app.
-
-I'm keeping this separate from the search logic so it's easy
-to swap the catalog source later (e.g. re-scrape, update file).
-"""
-
 import json
 import os
 from typing import Optional
