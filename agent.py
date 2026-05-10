@@ -1,14 +1,3 @@
-"""
-agent.py
-
-The main brain of the system. It:
-  1. Takes the full conversation history
-  2. Builds a search query from the context
-  3. Retrieves relevant catalog items via FAISS
-  4. Sends everything to Groq (llama-3.3-70b) with a carefully written prompt
-  5. Parses and validates the response before returning it
-"""
-
 import json
 import os
 import re
