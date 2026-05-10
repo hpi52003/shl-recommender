@@ -1,18 +1,3 @@
-"""
-search.py
-
-Builds a FAISS index from the catalog descriptions at startup,
-then exposes a simple retrieve() function used by the agent.
-
-Why FAISS + sentence-transformers?
-  - Runs fully in-memory, no external service needed
-  - MiniLM is small (80MB) and fast — well within the 30s timeout
-  - Free, no API calls, no rate limits
-
-The index is built once when the module is first imported.
-After that, each search is just a matrix multiply — very fast.
-"""
-
 import numpy as np
 import faiss
 from sentence_transformers import SentenceTransformer
