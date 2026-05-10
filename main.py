@@ -16,8 +16,7 @@ from search import ensure_index
 from agent import chat
 
 
-# ── Request / Response models ─────────────────────────────────────────────────
-
+# Request / Response models 
 class Message(BaseModel):
     role: str       # "user" or "assistant"
     content: str
@@ -53,7 +52,7 @@ class ChatResponse(BaseModel):
     end_of_conversation: bool
 
 
-# ── App lifecycle ─────────────────────────────────────────────────────────────
+# App lifecycle 
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
@@ -72,7 +71,7 @@ app = FastAPI(
 )
 
 
-# ── Endpoints ─────────────────────────────────────────────────────────────────
+# Endpoints
 
 @app.get("/health")
 def health():
